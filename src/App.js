@@ -1,9 +1,12 @@
 import React from 'react';
+import { hot } from 'react-hot-loader/root';
 
 function App() {
-  return <div>
+  return (
+    <div>
       <h1>this is react</h1>
-  </div>;
+    </div>
+  );
 }
 
-export default App;
+export default hot(App);
