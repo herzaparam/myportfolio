@@ -10,7 +10,8 @@ const config = {
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js'
+    filename: '[name].[contenthash].js',
+    assetModuleFilename: 'images/[hash][ext]'
   },
   module: {
     rules: [
@@ -28,26 +29,31 @@ const config = {
         ]
       },
       {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              mimetype: 'image/png'
-            }
-          }
-        ]
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset/resource'
       },
-      {
-        test: /\.svg$/,
-        use: 'file-loader'
-      }
+      // {
+      //   test: /\.png$/,
+      //   use: [
+      //     {
+      //       loader: 'url-loader',
+      //       options: {
+      //         mimetype: 'image/png'
+      //       }
+      //     }
+      //   ]
+      // },
+      // {
+      //   test: /\.svg$/,
+      //   use: 'file-loader'
+      // }
     ]
   },
   devServer: {
     'static': {
       directory: './dist'
-    }
+    },
+    open: true,
   },
   plugins: [
     new HtmlWebpackPlugin({

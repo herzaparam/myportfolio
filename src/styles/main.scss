@@ -1,6 +1,51 @@
-$primary-color: white;
-$bg: black;
+@import url('https://fonts.googleapis.com/css2?family=Grenze&display=swap');
+$font: 'Playfair Display SC', serif;
+
+$primary: white;
+$secondary: #181818;
+$tertiary: #838383;
+
+$title-size: 52px;
+$title2-size: 48px;
+$title3-size: 28px;
+$paragraph-size: 16px;
+$description-size: 26px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: $font;
+  background-color: $secondary;
+  color: $primary;
+  padding: 0 20px;
+}
 h1 {
-  color: $primary-color;
-  background-color: $bg;
+  font-size: $title-size;
+  letter-spacing: 2px;
+  line-height: $title-size;
+  font-weight: 400;
+}
+h2 {
+  font-size: $title2-size;
+  line-height: $title2-size;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+h3 {
+  font-size: $title3-size;
+  line-height: $title3-size;
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+p {
+  font-size: $paragraph-size;
+  line-height: $paragraph-size;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+main {
+  padding: 20px 0;
 }
